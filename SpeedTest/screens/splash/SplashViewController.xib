@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="SpeedTest" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_splash" translatesAutoresizingMaskIntoConstraints="NO" id="8hF-3Q-60u">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_splash" translatesAutoresizingMaskIntoConstraints="NO" id="sMN-jB-mLi">
+                    <rect key="frame" x="76.666666666666686" y="149" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="sMN-jB-mLi" secondAttribute="height" multiplier="15:8" id="MF4-LU-abJ"/>
+                    </constraints>
+                </imageView>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1yv-Vv-bJg">
+                    <rect key="frame" x="59" y="784" width="275" height="4"/>
+                    <color key="backgroundColor" red="0.52549019610000003" green="0.53333333329999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.050980392159999999" green="1" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </progressView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="1yv-Vv-bJg" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.7" id="7tx-I2-iOj"/>
+                <constraint firstAttribute="bottom" secondItem="8hF-3Q-60u" secondAttribute="bottom" id="JMd-sD-A91"/>
+                <constraint firstItem="sMN-jB-mLi" firstAttribute="width" secondItem="8hF-3Q-60u" secondAttribute="width" multiplier="0.610687" id="JQz-RJ-nhU"/>
+                <constraint firstItem="8hF-3Q-60u" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ncs-GX-FIP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1yv-Vv-bJg" secondAttribute="bottom" constant="30" id="OZO-q9-bDs"/>
+                <constraint firstItem="1yv-Vv-bJg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aSH-q2-P5r"/>
+                <constraint firstItem="sMN-jB-mLi" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.5" id="hxp-Pq-2IG"/>
+                <constraint firstItem="8hF-3Q-60u" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kEf-wu-lrF"/>
+                <constraint firstItem="8hF-3Q-60u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pD1-H2-Zfb"/>
+                <constraint firstItem="sMN-jB-mLi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="prP-Cs-oUF"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_splash" width="360" height="640"/>
+        <image name="logo_splash" width="244" height="99"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
