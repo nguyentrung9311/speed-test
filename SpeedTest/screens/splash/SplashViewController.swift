@@ -9,21 +9,42 @@ import UIKit
 
 class SplashViewController: UIViewController {
 
+    @IBOutlet weak var progressView: UIProgressView!
+    
+    var progressTimer: Timer?
+    var currentProgress: Float = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+        progressView.progress = 0
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
     }
-    */
+    
+    @objc func updateProgress() {
+        currentProgress += 1.0
+        
+        progressView.setProgress((currentProgress/100.0), animated: true)
+        
+        if currentProgress >= 100.0 {
+            progressTimer?.invalidate()
+            progressTimer = nil
+            perform(#selector(transitionToMainScreen), with: nil, afterDelay: 0.5)
+        }
+    }
+    
+    @objc func transitionToMainScreen() {
+        NSLog("navigationController is nil: %d", navigationController == nil)
+        let mainViewController = MainViewController()
+        present(mainViewController, animated: true, completion: nil)
 
+    }
+    
+    deinit {
+        progressTimer?.invalidate()
+        progressTimer = nil
+    }
 }
