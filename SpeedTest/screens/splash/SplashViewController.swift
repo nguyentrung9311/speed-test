@@ -37,9 +37,10 @@ class SplashViewController: UIViewController {
     }
     
     @objc func transitionToMainScreen() {
-        NSLog("navigationController is nil: %d", navigationController == nil)
-        let mainViewController = MainViewController()
-        present(mainViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(MainViewController(), animated: true)
+//        NSLog("navigationController is nil: %d", navigationController == nil)
+//        let mainViewController = MainViewController()
+//        present(mainViewController, animated: true, completion: nil)
 
     }
     

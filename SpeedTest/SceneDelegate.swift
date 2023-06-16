@@ -18,7 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
         window?.windowScene = scene
-        window?.rootViewController = SplashViewController()
+        
+        let nav = UINavigationController(rootViewController: SplashViewController())
+        nav.isNavigationBarHidden = true
+        nav.isToolbarHidden = true
+        
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
         
         (UIApplication.shared.delegate as? AppDelegate)?.window = window
